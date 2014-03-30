@@ -117,6 +117,16 @@ void test(int n, long int ppm, int *C)
 	break;
     }
   printf("\n");
+
+  /* deallocate */
+  for(k=0; k<M; k++) 
+    for (a = G.G[k]; a != NULL; ) {
+      adj *suiv = a->suiv;
+      printf("Freeing G.G[%d] %x\n", k, a);
+      free(a);
+      a = suiv;
+    }
+  free(G.G);
 }
 
 int main(int narg, char **arg)

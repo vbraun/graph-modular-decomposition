@@ -127,6 +127,7 @@ void test(int n, long int ppm, int *C)
       a = suiv;
     }
   free(G.G);
+  free(R);
 }
 
 int main(int narg, char **arg)

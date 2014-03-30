@@ -7,7 +7,7 @@ random: random.o dm.o
 	gcc dm.o random.o -o random
 
 vg: random
-	valgrind --leak-check=full ./random 10 1100
+	valgrind --leak-check=full --track-origins=yes ./random 10 1100
 
 dm.o: dm.c dm_english.h
 	gcc $(CFLAGS) -c dm.c
